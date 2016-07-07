@@ -1,0 +1,1 @@
+export { default } from 'affinity-engine-menu-bar/components/affinity-engine-menu-bar-menu';
