@@ -1,0 +1,11 @@
+<div class="ae-menu-bar-container {{joinedCustomClassNames}}" data-test={{hook "affinity_engine_menu_bar_container"}}>
+  <div class="ae-menu-bar" data-test={{hook "affinity_engine_menu_bar_content"}}>
+    {{yield (hash
+      engineId=engineId
+    )}}
+  </div>
+</div>
+
+{{#if componentName}}
+  {{component componentName engineId=engineId hook="affinity_engine_menu_bar_modal"}}
+{{/if}}

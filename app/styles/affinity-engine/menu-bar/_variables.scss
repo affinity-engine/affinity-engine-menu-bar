@@ -1,0 +1,12 @@
+$ae-menu-bar-vertical-rhythm: $ae-default-line-height !default;
+$ae-menu-bar-base-padding: $ae-menu-bar-vertical-rhythm * 0.16 !default;
+
+$ae-menu-bar-font-size: $ae-default-font-size !default;
+$ae-menu-bar-top: 0 !default;
+$ae-menu-bar-left: 0 !default;
+$ae-menu-bar-right: 0 !default;
+$ae-menu-bar-height: $ae-default-line-height + ($ae-menu-bar-base-padding * 2) + $ae-default-border-width !default;
+$ae-menu-bar-padding: $ae-menu-bar-base-padding $ae-menu-bar-base-padding * 2 !default;
+$ae-menu-bar-transition-speed: $ae-default-transition-speed !default;
+
+$ae-menu-bar-icon-margin-left: $ae-menu-bar-vertical-rhythm * 0.16 !default;
