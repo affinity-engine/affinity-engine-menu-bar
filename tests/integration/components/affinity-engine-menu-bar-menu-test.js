@@ -22,10 +22,10 @@ test('it displays the choices', function(assert) {
 
   this.render(hbs`{{affinity-engine-menu-bar-menu choices=choices columns=1 translator=translator}}`);
 
-  assert.equal(this.$(hook('ember_columnar_menu_option')).length, 3, 'correct number of options');
-  assert.equal(this.$(hook('ember_columnar_menu_option')).eq(0).text().trim(), 'foo', 'correct text displayed');
-  assert.equal(this.$(hook('ember_columnar_menu_option')).eq(1).text().trim(), 'bawka', 'correct text displayed');
-  assert.equal(this.$(hook('ember_columnar_menu_option')).eq(2).text().trim(), 'baz', 'correct order');
+  assert.equal(this.$(hook('ember_flex_menu_option')).length, 3, 'correct number of options');
+  assert.equal(this.$(hook('ember_flex_menu_option')).eq(0).text().trim(), 'foo', 'correct text displayed');
+  assert.equal(this.$(hook('ember_flex_menu_option')).eq(1).text().trim(), 'bawka', 'correct text displayed');
+  assert.equal(this.$(hook('ember_flex_menu_option')).eq(2).text().trim(), 'baz', 'correct order');
 });
 
 test('it displays the correct number of columns', function(assert) {
@@ -35,8 +35,8 @@ test('it displays the correct number of columns', function(assert) {
 
   this.render(hbs`{{affinity-engine-menu-bar-menu choices=choices columns=2}}`);
 
-  assert.equal(this.$(hook('ember_columnar_menu_option')).length, 3, 'correct number of options');
-  assert.equal(this.$(hook('ember_columnar_menu_row')).length, 2, 'correct number of rows');
+  assert.equal(this.$(hook('ember_flex_menu_option')).length, 3, 'correct number of options');
+  assert.equal(this.$(hook('ember_flex_menu_row')).length, 2, 'correct number of rows');
 });
 
 test('clicking a choice returns the choice object', function(assert) {
@@ -49,5 +49,5 @@ test('clicking a choice returns the choice object', function(assert) {
 
   this.render(hbs`{{affinity-engine-menu-bar-menu choices=choices columns=1 onChoice=(action onChoice)}}`);
 
-  this.$(hook('ember_columnar_menu_option_button')).eq(1).click();
+  this.$(hook('ember_flex_menu_option_button')).eq(1).click();
 });
