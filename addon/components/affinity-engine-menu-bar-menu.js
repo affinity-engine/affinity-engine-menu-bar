@@ -1,6 +1,6 @@
 import Ember from 'ember';
 import layout from '../templates/components/affinity-engine-menu-bar-menu';
-import { ManagedFocusMixin, configurable } from 'affinity-engine';
+import { ManagedFocusMixin, classNamesConfigurable, configurable } from 'affinity-engine';
 import multiton from 'ember-multiton-service';
 
 const {
@@ -28,7 +28,7 @@ export default Component.extend(ManagedFocusMixin, {
   translator: service('affinity-engine/translator'),
 
   columns: configurable(configurationTiers, 'menuColumns'),
-  customClassNames: configurable(configurationTiers, 'classNames'),
+  customClassNames: classNamesConfigurable(configurationTiers, 'classNames'),
   iconFamily: configurable(configurationTiers, 'iconFamily'),
   acceptKeys: configurable(configurationTiers, 'keys.accept'),
   cancelKeys: configurable(configurationTiers, 'keys.escape'),
