@@ -45,7 +45,7 @@ configurationTiers.forEach((tier) => {
   test(`applies the classNames found in ${tier}`, function(assert) {
     assert.expect(2);
 
-    const stub = deepStub(tier, 'classNames', ['foo', 'bar']);
+    const stub = deepStub(tier, { classNames: ['foo', 'bar'] });
 
     this.setProperties(getProperties(stub, 'config'));
 
