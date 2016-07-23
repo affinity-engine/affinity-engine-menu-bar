@@ -24,6 +24,8 @@ const configurationTiers = [
 export default Component.extend(ManagedFocusMixin, {
   layout,
 
+  classNames: ['ae-menu'],
+
   config: multiton('affinity-engine/config', 'engineId'),
   translator: service('affinity-engine/translator'),
 
