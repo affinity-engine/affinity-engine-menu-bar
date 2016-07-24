@@ -1,6 +1,7 @@
 import Ember from 'ember';
 import layout from '../templates/components/affinity-engine-menu-bar-menu';
 import { ManagedFocusMixin, classNamesConfigurable, configurable } from 'affinity-engine';
+import { EKMixin, keyDown } from 'ember-keyboard';
 import multiton from 'ember-multiton-service';
 
 const {
@@ -21,7 +22,7 @@ const configurationTiers = [
   'config.attrs.globals'
 ];
 
-export default Component.extend(ManagedFocusMixin, {
+export default Component.extend(EKMixin, ManagedFocusMixin, {
   layout,
 
   classNames: ['ae-menu'],
@@ -45,6 +46,14 @@ export default Component.extend(ManagedFocusMixin, {
 
   keyboardActivated: reads('isFocused'),
   keyboardPriority: 999999999999999999999,
+
+  init(...args) {
+    this._super(...args);
+
+    const cancelKeys = get(this, 'cancelKeys') || [];
+
+    cancelKeys.forEach((key) => this.on(keyDown(key), () => this.attrs.onChoice()));
+  },
 
   translatedChoices: computed('choices.[]', {
     get() {
