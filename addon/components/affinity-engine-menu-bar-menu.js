@@ -16,8 +16,8 @@ const { inject: { service } } = Ember;
 
 const configurationTiers = [
   'options',
-  'config.attrs.mainMenu.menu',
-  'config.attrs.mainMenu',
+  'config.attrs.menuBar.menu',
+  'config.attrs.menuBar',
   'config.attrs.globals'
 ];
 
@@ -25,6 +25,9 @@ export default Component.extend(ManagedFocusMixin, {
   layout,
 
   classNames: ['ae-menu'],
+  hook: 'affinity_engine_menu_bar_menu',
+
+  choices: computed(() => Ember.A()),
 
   config: multiton('affinity-engine/config', 'engineId'),
   translator: service('affinity-engine/translator'),

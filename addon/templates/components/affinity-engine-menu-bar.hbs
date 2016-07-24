@@ -7,5 +7,7 @@
 </div>
 
 {{#if componentName}}
-  {{component componentName engineId=engineId hook="affinity_engine_menu_bar_modal"}}
+  <div data-test={{hook "affinity_engine_menu_bar_modal"}}>
+    {{component componentName engineId=engineId}}
+  </div>
 {{/if}}
