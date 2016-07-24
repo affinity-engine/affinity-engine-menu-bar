@@ -75,7 +75,7 @@ configurationTiers.forEach((tier) => {
 
     this.render(hbs`{{affinity-engine-menu-bar-menu config=config options=options}}`);
 
-    assert.ok(this.$(hook('ember_flex_menu')).hasClass('foo'), 'has class foo');
-    assert.ok(this.$(hook('ember_flex_menu')).hasClass('bar'), 'has class bar');
+    assert.ok(this.$(hook('affinity_engine_menu_bar_menu')).hasClass('foo'), 'has class foo');
+    assert.ok(this.$(hook('affinity_engine_menu_bar_menu')).hasClass('bar'), 'has class bar');
   });
 });
