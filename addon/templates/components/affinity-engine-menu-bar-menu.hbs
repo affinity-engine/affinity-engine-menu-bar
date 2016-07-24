@@ -1,3 +1,7 @@
+{{#if translatedHeader}}
+  <div class="ae-menu-header" data-test={{hook "affinity_engine_menu_bar_menu_header"}}>{{translatedHeader}}</div>
+{{/if}}
+
 {{ember-flex-menu
   acceptKeys=acceptKeys
   cancelKeys=cancelKeys

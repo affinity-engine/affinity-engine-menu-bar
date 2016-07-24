@@ -61,5 +61,13 @@ export default Component.extend(ManagedFocusMixin, {
         };
       });
     }
+  }).readOnly(),
+
+  translatedHeader: computed('header', {
+    get() {
+      const header = get(this, 'header');
+
+      return get(this, 'translator').translate(header);
+    }
   }).readOnly()
 });

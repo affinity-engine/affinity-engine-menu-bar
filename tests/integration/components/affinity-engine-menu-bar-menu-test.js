@@ -16,6 +16,28 @@ moduleForComponent('affinity-engine-menu-bar-menu', 'Integration | Component | a
   }
 });
 
+test('it displays the header', function(assert) {
+  assert.expect(1);
+
+  this.set('translator', {
+    translate(key) {
+      return key === 'bar' ? 'bawka' : key;
+    }
+  });
+
+  this.render(hbs`{{affinity-engine-menu-bar-menu header="bar" translator=translator}}`);
+
+  assert.equal(this.$(hook('affinity_engine_menu_bar_menu_header')).text().trim(), 'bawka', 'text is correct');
+});
+
+test('it hides the header when not present', function(assert) {
+  assert.expect(1);
+
+  this.render(hbs`{{affinity-engine-menu-bar-menu}}`);
+
+  assert.equal(this.$(hook('affinity_engine_menu_bar_menu_header')).length, 0, 'header not rendered');
+});
+
 test('it displays the choices', function(assert) {
   assert.expect(4);
 
