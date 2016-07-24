@@ -78,11 +78,5 @@ export default Component.extend(EKMixin, ManagedFocusMixin, {
 
       return get(this, 'translator').translate(header);
     }
-  }).readOnly(),
-
-  actions: {
-    closeModal() {
-      this.attrs.closeModal();
-    }
-  }
+  }).readOnly()
 });
