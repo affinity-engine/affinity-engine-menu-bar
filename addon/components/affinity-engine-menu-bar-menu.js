@@ -52,7 +52,7 @@ export default Component.extend(EKMixin, ManagedFocusMixin, {
 
     const cancelKeys = get(this, 'cancelKeys') || [];
 
-    cancelKeys.forEach((key) => this.on(keyDown(key), () => this.attrs.onChoice()));
+    cancelKeys.forEach((key) => this.on(keyDown(key), () => this.attrs.closeModal()));
   },
 
   translatedChoices: computed('choices.[]', {
@@ -78,5 +78,11 @@ export default Component.extend(EKMixin, ManagedFocusMixin, {
 
       return get(this, 'translator').translate(header);
     }
-  }).readOnly()
+  }).readOnly(),
+
+  actions: {
+    closeModal() {
+      this.attrs.closeModal();
+    }
+  }
 });
