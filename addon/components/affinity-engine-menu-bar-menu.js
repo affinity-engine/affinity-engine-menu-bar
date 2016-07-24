@@ -38,7 +38,7 @@ export default Component.extend(EKMixin, ManagedFocusMixin, {
   customClassNames: classNamesConfigurable(configurationTiers, 'classNames'),
   iconFamily: configurable(configurationTiers, 'iconFamily'),
   acceptKeys: configurable(configurationTiers, 'keys.accept'),
-  cancelKeys: configurable(configurationTiers, 'keys.escape'),
+  cancelKeys: configurable(configurationTiers, 'keys.cancel'),
   moveDownKeys: configurable(configurationTiers, 'keys.moveDown'),
   moveLeftKeys: configurable(configurationTiers, 'keys.moveLeft'),
   moveRightKeys: configurable(configurationTiers, 'keys.moveRight'),
