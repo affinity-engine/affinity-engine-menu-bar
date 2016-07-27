@@ -17,9 +17,9 @@ const { inject: { service } } = Ember;
 
 const configurationTiers = [
   'options',
-  'config.attrs.menuBar.menu',
-  'config.attrs.menuBar',
-  'config.attrs.globals'
+  'config.attrs.component.menuBar.menu',
+  'config.attrs.component.menuBar',
+  'config.attrs'
 ];
 
 export default Component.extend(EKMixin, ManagedFocusMixin, {

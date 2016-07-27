@@ -82,9 +82,9 @@ test('clicking a choice returns the choice object', function(assert) {
 
 const configurationTiers = [
   'options',
-  'config.attrs.menuBar.menu',
-  'config.attrs.menuBar',
-  'config.attrs.globals'
+  'config.attrs.component.menuBar.menu',
+  'config.attrs.component.menuBar',
+  'config.attrs'
 ];
 
 configurationTiers.forEach((tier) => {

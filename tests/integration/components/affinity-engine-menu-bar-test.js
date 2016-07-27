@@ -37,8 +37,8 @@ test('it renders a component if a componentName is provided by the modalManager'
 });
 
 const configurationTiers = [
-  'config.attrs.menuBar',
-  'config.attrs.globals'
+  'config.attrs.component.menuBar',
+  'config.attrs'
 ];
 
 configurationTiers.forEach((tier) => {
