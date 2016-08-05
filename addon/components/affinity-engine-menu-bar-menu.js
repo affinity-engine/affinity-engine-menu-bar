@@ -1,6 +1,6 @@
 import Ember from 'ember';
 import layout from '../templates/components/affinity-engine-menu-bar-menu';
-import { ManagedFocusMixin, classNamesConfigurable, configurable } from 'affinity-engine';
+import { ManagedFocusMixin, classNamesConfigurable, configurable, registrant } from 'affinity-engine';
 import { EKMixin, keyDown } from 'ember-keyboard';
 import multiton from 'ember-multiton-service';
 
@@ -13,7 +13,6 @@ const {
 } = Ember;
 
 const { reads } = computed;
-const { inject: { service } } = Ember;
 
 const configurationTiers = [
   'options',
@@ -32,7 +31,7 @@ export default Component.extend(EKMixin, ManagedFocusMixin, {
   choices: computed(() => Ember.A()),
 
   config: multiton('affinity-engine/config', 'engineId'),
-  translator: service('affinity-engine/translator'),
+  translator: registrant('affinity-engine/translator'),
 
   columns: configurable(configurationTiers, 'menuColumns'),
   customClassNames: classNamesConfigurable(configurationTiers, 'classNames'),
@@ -61,7 +60,8 @@ export default Component.extend(EKMixin, ManagedFocusMixin, {
 
       return choices.map((choice, index) => {
         const key = get(choice, 'key') || index;
-        const text = translator.translate(choice);
+        const textKey = get(choice, 'text.key') || get(choice, 'text') || choice;
+        const text = translator.translate(textKey, get(choice, 'text.options')) || textKey;
 
         return {
           ...choice,
@@ -76,7 +76,7 @@ export default Component.extend(EKMixin, ManagedFocusMixin, {
     get() {
       const header = get(this, 'header');
 
-      return get(this, 'translator').translate(header);
+      return get(this, 'translator').translate(header) || header;
     }
   }).readOnly()
 });
