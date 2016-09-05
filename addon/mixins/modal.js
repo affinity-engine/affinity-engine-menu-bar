@@ -11,5 +11,11 @@ export default Mixin.create({
 
   closeModal() {
     set(this, 'modalManager.componentName', undefined);
+  },
+
+  actions: {
+    didTransitionOut() {
+      this.closeModal();
+    }
   }
 });

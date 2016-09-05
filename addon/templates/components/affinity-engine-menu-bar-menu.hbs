@@ -1,19 +1,32 @@
-{{#if translatedHeader}}
-  <div class="ae-menu-header" data-test={{hook "affinity_engine_menu_bar_menu_header"}}>{{translatedHeader}}</div>
-{{/if}}
-
-{{ember-flex-menu
-  acceptKeys=acceptKeys
-  cancelKeys=cancelKeys
-  choices=translatedChoices
-  columns=columns
-  htmlSafe=true
-  iconFamily=iconFamily
-  keyboardActivated=keyboardActivated
-  keyboardPriority=keyboardPriority
-  moveDownKeys=moveDownKeys
-  moveLeftKeys=moveLeftKeys
-  moveRightKeys=moveRightKeys
-  moveUpKeys=moveUpKeys
-  onChoice=onChoice
+{{#affinity-engine-animation-box-wrapper
+  animationAdapter=animationLibrary
+  classNames="ae-hidden"
+  transitionIn=transitionIn
+  transitionOut=transitionOut
+  willTransitionOut=willTransitionOut
+  didTransitionOut=didTransitionOut
 }}
+  {{#if translatedHeader}}
+    <div class="ae-menu-header" data-test={{hook "affinity_engine_menu_bar_menu_header"}}>{{translatedHeader}}</div>
+  {{/if}}
+
+  {{#if choices}}
+    {{ember-flex-menu
+      acceptKeys=acceptKeys
+      cancelKeys=cancelKeys
+      choices=translatedChoices
+      columns=columns
+      htmlSafe=true
+      iconFamily=iconFamily
+      keyboardActivated=keyboardActivated
+      keyboardPriority=keyboardPriority
+      moveDownKeys=moveDownKeys
+      moveLeftKeys=moveLeftKeys
+      moveRightKeys=moveRightKeys
+      moveUpKeys=moveUpKeys
+      onChoice=onChoice
+    }}
+  {{/if}}
+
+  <div class="ae-screen" data-test={{hook "affinity_engine_menu_bar_menu_screen"}} {{action "closeModal"}}></div>
+{{/affinity-engine-animation-box-wrapper}}

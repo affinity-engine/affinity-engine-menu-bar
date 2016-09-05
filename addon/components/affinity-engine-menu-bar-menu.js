@@ -1,8 +1,7 @@
 import Ember from 'ember';
 import layout from '../templates/components/affinity-engine-menu-bar-menu';
-import { ManagedFocusMixin, classNamesConfigurable, configurable, registrant } from 'affinity-engine';
+import { ManagedFocusMixin, registrant } from 'affinity-engine';
 import { EKMixin, keyDown } from 'ember-keyboard';
-import multiton from 'ember-multiton-service';
 
 const {
   Component,
@@ -14,13 +13,6 @@ const {
 
 const { reads } = computed;
 
-const configurationTiers = [
-  'options',
-  'config.attrs.component.menuBar.menu',
-  'config.attrs.component.menuBar',
-  'config.attrs'
-];
-
 export default Component.extend(EKMixin, ManagedFocusMixin, {
   layout,
 
@@ -30,18 +22,7 @@ export default Component.extend(EKMixin, ManagedFocusMixin, {
 
   choices: computed(() => Ember.A()),
 
-  config: multiton('affinity-engine/config', 'engineId'),
   translator: registrant('affinity-engine/translator'),
-
-  columns: configurable(configurationTiers, 'menuColumns'),
-  customClassNames: classNamesConfigurable(configurationTiers, 'classNames'),
-  iconFamily: configurable(configurationTiers, 'iconFamily'),
-  acceptKeys: configurable(configurationTiers, 'keys.accept'),
-  cancelKeys: configurable(configurationTiers, 'keys.cancel'),
-  moveDownKeys: configurable(configurationTiers, 'keys.moveDown'),
-  moveLeftKeys: configurable(configurationTiers, 'keys.moveLeft'),
-  moveRightKeys: configurable(configurationTiers, 'keys.moveRight'),
-  moveUpKeys: configurable(configurationTiers, 'keys.moveUp'),
 
   keyboardActivated: reads('isFocused'),
   keyboardPriority: 999999999999999999999,

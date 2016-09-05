@@ -1,12 +1,6 @@
-import Ember from 'ember';
 import { moduleForComponent, test } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
 import { hook, initialize as initializeHook } from 'ember-hook';
-import { deepStub } from 'affinity-engine';
-
-const {
-  getProperties
-} = Ember;
 
 moduleForComponent('affinity-engine-menu-bar-menu', 'Integration | Component | affinity engine menu bar menu', {
   integration: true,
@@ -78,26 +72,4 @@ test('clicking a choice returns the choice object', function(assert) {
   this.render(hbs`{{affinity-engine-menu-bar-menu choices=choices columns=1 onChoice=(action onChoice)}}`);
 
   this.$(hook('ember_flex_menu_option_button')).eq(1).click();
-});
-
-const configurationTiers = [
-  'options',
-  'config.attrs.component.menuBar.menu',
-  'config.attrs.component.menuBar',
-  'config.attrs'
-];
-
-configurationTiers.forEach((tier) => {
-  test(`applies the classNames found in ${tier}`, function(assert) {
-    assert.expect(2);
-
-    const stub = deepStub(tier, { classNames: ['foo', 'bar'] });
-
-    this.setProperties(getProperties(stub, 'config', 'options'));
-
-    this.render(hbs`{{affinity-engine-menu-bar-menu config=config options=options}}`);
-
-    assert.ok(this.$(hook('affinity_engine_menu_bar_menu')).hasClass('foo'), 'has class foo');
-    assert.ok(this.$(hook('affinity_engine_menu_bar_menu')).hasClass('bar'), 'has class bar');
-  });
 });
