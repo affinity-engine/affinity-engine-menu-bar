@@ -6,6 +6,8 @@
   willTransitionOut=willTransitionOut
   didTransitionOut=didTransitionOut
 }}
+  <div class="ae-screen" data-test={{hook "affinity_engine_menu_bar_menu_screen"}} {{action closeModal}}></div>
+
   {{#if translatedHeader}}
     <div class="ae-menu-header" data-test={{hook "affinity_engine_menu_bar_menu_header"}}>{{translatedHeader}}</div>
   {{/if}}
@@ -27,6 +29,4 @@
       onChoice=onChoice
     }}
   {{/if}}
-
-  <div class="ae-screen" data-test={{hook "affinity_engine_menu_bar_menu_screen"}} {{action "closeModal"}}></div>
 {{/affinity-engine-animation-box-wrapper}}

@@ -5,6 +5,7 @@ import { EKMixin, keyDown } from 'ember-keyboard';
 
 const {
   Component,
+  K,
   computed,
   get,
   getProperties,
@@ -21,6 +22,7 @@ export default Component.extend(EKMixin, ManagedFocusMixin, {
   hook: 'affinity_engine_menu_bar_menu',
 
   choices: computed(() => Ember.A()),
+  closeModal: K,
 
   translator: registrant('affinity-engine/translator'),
 
