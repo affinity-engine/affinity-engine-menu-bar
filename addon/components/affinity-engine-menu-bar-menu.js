@@ -17,8 +17,6 @@ const { reads } = computed;
 export default Component.extend(EKMixin, ManagedFocusMixin, {
   layout,
 
-  classNames: ['ae-menu'],
-  classNameBindings: ['customClassNames'],
   hook: 'affinity_engine_menu_bar_menu',
 
   choices: computed(() => Ember.A()),
