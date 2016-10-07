@@ -18,7 +18,7 @@ test('it yields content into affinity_engine_menu_bar_content', function(assert)
   assert.expect(1);
 
   this.render(hbs`
-    {{#affinity-engine-menu-bar}}
+    {{#affinity-engine-menu-bar engineId="foo"}}
       Hello!
     {{/affinity-engine-menu-bar}}
   `);
@@ -31,7 +31,7 @@ test('it renders a component if a componentName is provided by the modalManager'
 
   this.set('modalManager', { componentName: 'foo-bar' });
 
-  this.render(hbs`{{affinity-engine-menu-bar modalManager=modalManager}}`);
+  this.render(hbs`{{affinity-engine-menu-bar modalManager=modalManager engineId="foo"}}`);
 
   assert.equal(this.$(hook('affinity_engine_menu_bar_modal')).text().trim(), 'I am a foo-bar!', 'modal rendered correct component');
 });
@@ -49,7 +49,7 @@ configurationTiers.forEach((tier) => {
 
     this.setProperties(getProperties(stub, 'config'));
 
-    this.render(hbs`{{affinity-engine-menu-bar config=config}}`);
+    this.render(hbs`{{affinity-engine-menu-bar config=config engineId="foo"}}`);
 
     assert.ok(this.$(hook('affinity_engine_menu_bar_container')).hasClass('foo'), 'has class foo');
     assert.ok(this.$(hook('affinity_engine_menu_bar_container')).hasClass('bar'), 'has class bar');

@@ -19,7 +19,7 @@ test('it displays the header', function(assert) {
     }
   });
 
-  this.render(hbs`{{affinity-engine-menu-bar-menu header="bar" translator=translator}}`);
+  this.render(hbs`{{affinity-engine-menu-bar-menu header="bar" translator=translator engineId="foo"}}`);
 
   assert.equal(this.$(hook('affinity_engine_menu_bar_menu_header')).text().trim(), 'bawka', 'text is correct');
 });
@@ -27,7 +27,7 @@ test('it displays the header', function(assert) {
 test('it hides the header when not present', function(assert) {
   assert.expect(1);
 
-  this.render(hbs`{{affinity-engine-menu-bar-menu}}`);
+  this.render(hbs`{{affinity-engine-menu-bar-menu engineId="foo"}}`);
 
   assert.equal(this.$(hook('affinity_engine_menu_bar_menu_header')).length, 0, 'header not rendered');
 });
@@ -42,7 +42,7 @@ test('it displays the choices', function(assert) {
     }
   });
 
-  this.render(hbs`{{affinity-engine-menu-bar-menu choices=choices columns=1 translator=translator}}`);
+  this.render(hbs`{{affinity-engine-menu-bar-menu choices=choices columns=1 translator=translator engineId="foo"}}`);
 
   assert.equal(this.$(hook('ember_flex_menu_option')).length, 3, 'correct number of options');
   assert.equal(this.$(hook('ember_flex_menu_option')).eq(0).text().trim(), 'foo', 'correct text displayed');
@@ -55,7 +55,7 @@ test('it displays the correct number of columns', function(assert) {
 
   this.set('choices', ['foo', 'bar', 'baz']);
 
-  this.render(hbs`{{affinity-engine-menu-bar-menu choices=choices columns=2}}`);
+  this.render(hbs`{{affinity-engine-menu-bar-menu choices=choices columns=2 engineId="foo"}}`);
 
   assert.equal(this.$(hook('ember_flex_menu_option')).length, 3, 'correct number of options');
   assert.equal(this.$(hook('ember_flex_menu_row')).length, 2, 'correct number of rows');
@@ -69,7 +69,7 @@ test('clicking a choice returns the choice object', function(assert) {
     assert.deepEqual(choice, { key: 1, text: 'bar', value: 'bar' }, 'choice is correct');
   });
 
-  this.render(hbs`{{affinity-engine-menu-bar-menu choices=choices columns=1 onChoice=(action onChoice)}}`);
+  this.render(hbs`{{affinity-engine-menu-bar-menu choices=choices columns=1 engineId="foo" onChoice=(action onChoice)}}`);
 
   this.$(hook('ember_flex_menu_option_button')).eq(1).click();
 });
