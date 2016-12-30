@@ -23,7 +23,7 @@
   "dependencies": {
     "ember-cli-babel": "^5.1.7",
     "ember-cli-htmlbars": "^1.0.10",
-    "ember-flex-menu": "^0.0.8"
+    "ember-flex-menu": "^0.0.11"
   },
   "devDependencies": {
     "affinity-engine": "git+https://github.com/affinity-engine/affinity-engine.git",
