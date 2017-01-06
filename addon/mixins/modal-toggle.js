@@ -8,6 +8,8 @@ const {
 } = Ember;
 
 export default Mixin.create({
+  classNames: ['ae-menu-bar-control-icon'],
+
   modalManager: multiton('affinity-engine/menu-bar/modal-manager', 'engineId'),
 
   click(...attrs) {
@@ -26,3 +28,4 @@ export default Mixin.create({
     set(this, 'modalManager.componentName', get(this, 'componentName'));
   }
 });
+

@@ -40,6 +40,8 @@ $ae-menu-bar-included: true;
   .ae-menu-bar-control-icon {
     @extend .ae-button;
 
+    padding: $ae-menu-bar-icon-padding;
     margin-left: $ae-menu-bar-icon-margin-left;
   }
 }
+
