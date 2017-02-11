@@ -1,6 +1,6 @@
 {
   "name": "affinity-engine-menu-bar",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "A menu bar for the Affinity Engine",
   "keywords": [
     "ember-addon",
@@ -26,9 +26,9 @@
     "ember-flex-menu": "^0.0.11"
   },
   "devDependencies": {
-    "affinity-engine": "git+https://github.com/affinity-engine/affinity-engine.git",
-    "affinity-engine-styles-bundle": "git+https://github.com/affinity-engine/affinity-engine-styles-bundle.git",
-    "affinity-engine-translator-ember-intl": "git+https://github.com/affinity-engine/affinity-engine-translator-ember-intl.git",
+    "affinity-engine": "^0.1.0",
+    "affinity-engine-styles-bundle": "^0.1.0",
+    "affinity-engine-translator-ember-intl": "^0.1.0",
     "babel-eslint": "^6.0.4",
     "broccoli-asset-rev": "^2.4.5",
     "ember-ajax": "^2.4.1",
@@ -56,7 +56,7 @@
   },
   "ember-addon": {
     "configPath": "tests/dummy/config",
-    "demoURL": "http://www.affinityengine.org/components/menu-bar",
+    "demoURL": "http://www.affinityengine.org/#/components/menu-bar",
     "after": [
       "affinity-engine"
     ]
