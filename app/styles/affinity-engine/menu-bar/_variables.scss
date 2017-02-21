@@ -9,6 +9,5 @@ $ae-menu-bar-height: $ae-default-line-height + ($ae-menu-bar-base-padding * 2) +
 $ae-menu-bar-padding: $ae-menu-bar-base-padding $ae-menu-bar-base-padding * 2 !default;
 $ae-menu-bar-transition-speed: $ae-default-transition-speed !default;
 
-$ae-menu-bar-icon-padding: $ae-menu-bar-vertical-rhythm * 0.08 !default;
+$ae-menu-bar-icon-padding: 0 $ae-menu-bar-vertical-rhythm * 0.08 !default;
 $ae-menu-bar-icon-margin-left: $ae-menu-bar-vertical-rhythm * 0.16 !default;
-
