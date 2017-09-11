@@ -1,7 +1,9 @@
 export default {
+  priority: 1,
   component: {
     menuBar: {
-      iconFamily: 'fa-icon'
+      attrs: {
+      }
     }
   }
 };
