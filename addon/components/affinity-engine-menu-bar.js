@@ -8,7 +8,7 @@ const { computed: { reads } } = Ember;
 
 const configurationTiers = [
   'component.menuBar',
-  'children'
+  'all'
 ];
 
 export default Component.extend(ManagedFocusMixin, {
