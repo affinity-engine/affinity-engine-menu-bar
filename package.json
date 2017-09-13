@@ -1,6 +1,6 @@
 {
   "name": "affinity-engine-menu-bar",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "A menu bar for the Affinity Engine",
   "keywords": [
     "ember-addon",

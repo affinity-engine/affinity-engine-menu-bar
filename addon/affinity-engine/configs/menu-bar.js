@@ -1,8 +1,10 @@
 export default {
   priority: 1,
-  component: {
-    menuBar: {
-      attrs: {
+  default: {
+    component: {
+      menuBar: {
+        attrs: {
+        }
       }
     }
   }
